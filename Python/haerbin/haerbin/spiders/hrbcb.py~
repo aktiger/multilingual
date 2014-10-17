@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+import scrapy
+
+
+class HrbcbSpider(scrapy.Spider):
+    name = "hrbcb"
+    allowed_domains = ["www.hrbcb.com.cn"]
+    start_urls = (
+        'http://www.www.hrbcb.com.cn/',
+    )
+
+    def parse(self, response):
+        pass
