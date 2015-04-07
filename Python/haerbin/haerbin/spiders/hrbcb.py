@@ -3,6 +3,12 @@ import scrapy
 import bs4
 from bs4 import BeautifulSoup
 
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+
 
 class HrbcbSpider(scrapy.Spider):
     name = "hrbcb"
@@ -25,4 +31,4 @@ class HrbcbSpider(scrapy.Spider):
         for item in soup.find_all('p'):
             for des in item.descendants:
                 if isinstance(des, bs4.element.NavigableString):
-                    print des.strip()
+                    print unicode(des.strip())
